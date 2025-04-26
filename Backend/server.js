@@ -20,7 +20,7 @@ app.put("/email",(req,res)=>{
     const email=req.params.email;
     const updatedData=req.body;
 
-    const find = users.find(u => u.email ===email);
+    const find = users.find(u => u.email === email);
 
     if(!find){
         return res.status(400).send("Email not found")
@@ -40,5 +40,5 @@ app.delete('/email',(req,res)=>{
         return res.status(400).send("email not found");
     }
     users.splice(ind,1);
-    res.status(200).send("User deleted successfully")
+    res.status(200).send("User deleted successfully");
 });
