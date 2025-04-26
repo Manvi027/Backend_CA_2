@@ -16,7 +16,7 @@ const users = [
     {email:"charlie@example.com",password:"charlie123"},
 ];
 
-app.put("/email",(req,res)=>{
+app.put("/user/:email",(req,res)=>{
     const email=req.params.email;
     const updatedData=req.body;
 
@@ -32,7 +32,7 @@ app.put("/email",(req,res)=>{
     res.status(200).send("Data updated");
 })
 
-app.delete('/email',(req,res)=>{
+app.delete('/user/:email',(req,res)=>{
     const email = req.params.email;
     const ind = users.findIndex(u=>u.email === email);
 
